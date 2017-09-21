@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'prjToñoMedicas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'appMedicas',
-        'USER': 'postgres',
-        'PASSWORD':'1053840370',
-        'HOST':'127.0.0.1',
+        'NAME': 'd9e8agdjst5ap7',
+        'USER': 'wrjspdnyuriemw',
+        'PASSWORD':'b96728e0f5cd1bd66981e76c77b31ce3b3fa11c0146a21f4cb2162b22b8fea1f',
+        'HOST':'ec2-184-72-248-8.compute-1.amazonaws.com',
         'PORT':'5432'
     }
 }
