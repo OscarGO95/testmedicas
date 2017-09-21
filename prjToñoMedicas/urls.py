@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from appToñoMedicas import views
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,4 +29,5 @@ urlpatterns = [
     url(r'^maps$', views.Views.maps, name="user"),
     url(r'^notifications$', views.Views.notifications, name="user"),
     url(r'^upgrade$', views.Views.upgrade, name="user")
+
 ]
