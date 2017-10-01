@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,3 +134,18 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+AUTHENTICATION_BACKENDS =(
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.facebook.FacebookAppOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL ='dashboard'
+
+SOCIAL_AUTH_TWITTER_KEY = 'aTKOmPZk2oKch7g1A3vlylKRN'
+SOCIAL_AUTH_TWITTER_SECRET = '1631akeuQozq6ePoHeVjXdOEx6XwVDkKQs5YOBT3JQmY1wNsar'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '406705036399443'
+SOCIAL_AUTH_FACEBOOK_SECRET = '784686d36d3d5d76b985d5854baa04fd'

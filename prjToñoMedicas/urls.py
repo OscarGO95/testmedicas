@@ -13,21 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
 from appToñoMedicas import views
 from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url('', include('social.apps.django_app.urls', namespace="social")),
     url(r'^$',views.Views.index, name="index"),
     url(r'^dashboard$', views.Views.dashboard, name="dashboard"),
     url(r'^user$', views.Views.profile, name="user"),
-    url(r'^table$', views.Views.table, name="user"),
-    url(r'^typography$', views.Views.typography, name="user"),
-    url(r'^icons$', views.Views.icons, name="user"),
-    url(r'^maps$', views.Views.maps, name="user"),
-    url(r'^notifications$', views.Views.notifications, name="user"),
-    url(r'^upgrade$', views.Views.upgrade, name="user")
-
+    url(r'^login$', views.Views.login, name="login"),
+    url(r'logout$', views.Views.logout)
 ]
+'''
+    url(r'^table$', views.Views.table, name="table"),
+    url(r'^typography$', views.Views.typography, name="typography"),
+    url(r'^icons$', views.Views.icons, name="icons"),
+    url(r'^maps$', views.Views.maps, name="maps"),
+    url(r'^notifications$', views.Views.notifications, name="notifications"),
+    url(r'^upgrade$', views.Views.upgrade, name="upgrade"),
+    '''

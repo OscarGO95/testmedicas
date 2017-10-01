@@ -1,16 +1,29 @@
-from django.shortcuts import render
+# -*- coding: utf-8 -*-
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+
 
 class Views:
 
     def index(request):
         return render(request, "ppalTemplate/index.html")
 
+    @login_required(login_url='login')
     def dashboard(request):
-        return render(request, "dashAdmin/dashboard.html")
+        return render(request, "views/index.html")
 
+    @login_required(login_url='login')
     def profile(request):
-        return render(request, "dashAdmin/user.html")
+        return render(request, "views/user.html")
 
+    def login(request):
+        return render(request, "loginTemplate/login.html")
+
+    def logout(request):
+        logout(request)
+        return redirect("/")
+'''
     def table(request):
         return render(request, "dashAdmin/table.html")
 
@@ -28,3 +41,4 @@ class Views:
 
     def upgrade(request):
         return render(request, "dashAdmin/upgrade.html")
+'''
