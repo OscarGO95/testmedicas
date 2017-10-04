@@ -76,13 +76,24 @@ WSGI_APPLICATION = 'prjToñoMedicas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'd9e8agdjst5ap7',
+#        'USER': 'wrjspdnyuriemw',
+#        'PASSWORD':'b96728e0f5cd1bd66981e76c77b31ce3b3fa11c0146a21f4cb2162b22b8fea1f',
+#        'HOST':'ec2-184-72-248-8.compute-1.amazonaws.com',
+#        'PORT':'5432'
+#    }
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9e8agdjst5ap7',
-        'USER': 'wrjspdnyuriemw',
-        'PASSWORD':'b96728e0f5cd1bd66981e76c77b31ce3b3fa11c0146a21f4cb2162b22b8fea1f',
-        'HOST':'ec2-184-72-248-8.compute-1.amazonaws.com',
+        'NAME': 'appMedicas',
+        'USER': 'postgres',
+        'PASSWORD':'1053840370',
+        'HOST':'127.0.0.1',
         'PORT':'5432'
     }
 }
@@ -131,6 +142,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT =os.path.join(BASE_DIR,"staticfiles")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#-----------------------------------------------------------------------------
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
@@ -143,6 +155,11 @@ AUTHENTICATION_BACKENDS =(
 )
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL ='dashboard'
+#SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'picture', 'name']
+
+#SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+#  'fields': 'id, name, email, age_range'
+#}
 
 SOCIAL_AUTH_TWITTER_KEY = 'aTKOmPZk2oKch7g1A3vlylKRN'
 SOCIAL_AUTH_TWITTER_SECRET = '1631akeuQozq6ePoHeVjXdOEx6XwVDkKQs5YOBT3JQmY1wNsar'

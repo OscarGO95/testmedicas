@@ -368,7 +368,7 @@
         demo.initChartist();
         $.notify({
             // options
-            title: 'Bienvenido Usuario <b>{{ user }}</b>',
+            title: 'Bienvenido Usuario <b>{{ user.first_name }}'+ " "+' {{user.last_name }}</b>',
             message: 'El sistema informa que todo trabaja con normalidad'
         }, {
             // settings

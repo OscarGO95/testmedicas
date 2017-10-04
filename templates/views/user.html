@@ -1,4 +1,5 @@
 {% extends 'dashAdmin/dashboard.html' %}
+{% load staticfiles %}
 {% block title %}
     Mi Perfil
 {% endblock %}
@@ -10,12 +11,14 @@
         <div class="col-lg-4 col-md-5">
             <div class="card card-user">
                 <div class="image">
-                    <!--<img src="{#% static 'Img/imgDashAdmin/background.jpg' %#}" alt="..."/> -->
+                    <img src="{% static 'Img/imgDashAdmin/background.jpg' %}" alt="..."/>
                 </div>
                 <div class="content">
                     <div class="author">
-                        <!--<img class="avatar border-white" src="{#% static 'Img/imgDashAdmin/faces/face-2.jpg' %#}" alt="..."/> -->
-                        <h4 class="title">{{ user }}<br/>
+                        <img class="avatar border-white" src="{% static 'Img/imgDashAdmin/faces/face-2.jpg' %}" alt="..."/>
+                        <h4 class="title">{{ user.first_name }} {{user.last_name }}<br/>
+                            {{ user.email }}
+                            {{ fields }}
                         </h4>
                     </div>
                     <ul class="list-group">
@@ -35,7 +38,7 @@
                                     <br/>
                                     <span class="text-danger"><small>
                                         <script>
-                                            var date=new Date();
+                                            var date = new Date();
                                         document.write(date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear());
                                     </script>
                                     </small></span>
@@ -158,4 +161,5 @@ But that's the difference in our opinions.</textarea>
 
 
     </div>
+
 {% endblock %}
