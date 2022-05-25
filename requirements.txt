@@ -12,7 +12,7 @@ oauthlib==2.0.4
 pbr==3.1.1
 psycopg2==2.7.3.1
 pyglet==1.2.4
-PyJWT==1.5.3
+PyJWT==2.4.0
 pyparsing==2.2.0
 python-dateutil==2.6.1
 python-openid==2.2.5
